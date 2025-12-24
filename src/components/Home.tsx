@@ -10,6 +10,18 @@ import {
   Infinity,
 } from 'lucide-react';
 
+import { SiKubernetes,
+         SiGrafana,
+         SiPrometheus,
+         SiGithubactions,
+         SiHelm,
+         SiTerraform,
+ } from 'react-icons/si';
+
+ import { GrDocker } from "react-icons/gr";
+ import { FaAws } from "react-icons/fa";
+
+
 interface HomeProps {
   onGetInTouch: () => void;
 }
@@ -17,21 +29,22 @@ interface HomeProps {
 export default function Home({ onGetInTouch }: HomeProps) {
   const expertise = [
     'DevOps Engineering',
-    'MLOps Engineering',
-    'Cloud & Kubernetes',
-    'CI/CD Pipelines',
+    // 'MLOps Engineering',
+    'Cloud-Native',
+    // 'CI/CD Pipelines',
+    'Open-Source Contributor',
   ];
 
   const technologies = [
-    { name: 'Docker', icon: Container },
-    { name: 'Kubernetes', icon: Layers },
-    { name: 'AWS', icon: Cloud },
+    { name: 'Docker', icon: GrDocker },
+    { name: 'Kubernetes', icon: SiKubernetes },
+    { name: 'AWS', icon: FaAws },
     { name: 'CI/CD', icon: Infinity },
-    { name: 'GitHub Actions', icon: GitBranch },
-    { name: 'Helm', icon: Layers },
-    { name: 'Terraform', icon: Database },
-    { name: 'Prometheus', icon: Activity },
-    { name: 'Fastify', icon: Zap },
+    { name: 'GitHub Actions', icon: SiGithubactions },
+    { name: 'Helm', icon: SiHelm },
+    { name: 'Terraform', icon: SiTerraform },
+    { name: 'Prometheus', icon: SiPrometheus },
+    { name: 'Grafana', icon: SiGrafana },
     { name: 'Go', icon: Code2 },
     { name: 'React', icon: Code2 },
     { name: 'LocalStack', icon: Database },
@@ -54,7 +67,7 @@ export default function Home({ onGetInTouch }: HomeProps) {
           ))}
         </div>
 
-        <p className="text-gray-400 italic text-lg mb-16">Open-Source Contributor</p>
+        {/* <p className="text-gray-400 italic text-lg mb-16">Open-Source Contributor</p> */}
 
         <div className="space-y-6 mb-16">
           <h2 className="text-gray-500 uppercase text-sm tracking-wider">
