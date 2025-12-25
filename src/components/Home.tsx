@@ -16,11 +16,18 @@ import { SiKubernetes,
          SiGithubactions,
          SiHelm,
          SiTerraform,
+         SiArchlinux,
+         SiRaspberrypi,
+         SiJavascript,
+         SiPostgresql,
+         SiArgo,
+         SiOpentelemetry,
+         SiNginx,
  } from 'react-icons/si';
 
- import { GrDocker } from "react-icons/gr";
- import { FaAws } from "react-icons/fa";
-
+ import { GrDocker, GrMysql } from "react-icons/gr";
+ import { FaAws, FaReact } from "react-icons/fa";
+import { FaGolang } from "react-icons/fa6";
 
 interface HomeProps {
   onGetInTouch: () => void;
@@ -45,13 +52,20 @@ export default function Home({ onGetInTouch }: HomeProps) {
     { name: 'Terraform', icon: SiTerraform },
     { name: 'Prometheus', icon: SiPrometheus },
     { name: 'Grafana', icon: SiGrafana },
-    { name: 'Go', icon: Code2 },
-    { name: 'React', icon: Code2 },
-    { name: 'LocalStack', icon: Database },
+    { name: 'Go', icon: FaGolang },
+    { name: 'React', icon: FaReact },
+    { name: 'JavaScript', icon: SiJavascript },
+    { name: 'Arch Linux', icon: SiArchlinux },
+    { name: 'Raspberry Pi', icon: SiRaspberrypi },
+    { name: 'PostgreSQL', icon: SiPostgresql },
+    { name: 'MySQL', icon: GrMysql },
+    { name: 'ArgoCD', icon: SiArgo },
+    { name: 'OpenTelemetry', icon: SiOpentelemetry },
+    { name: 'Nginx', icon: SiNginx},
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white px-6 pt-32 pb-32 flex flex-col">
+    <div className="min-h-screen bg-zinc-950 text-white px-6 pt-32 pb-20 flex flex-col">
       <div className="max-w-6xl mx-auto flex-1 flex flex-col justify-center">
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-8">
           Hello, I'm Harsh
