@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 
@@ -10,6 +11,7 @@ function App() {
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
   const blogRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
@@ -19,18 +21,22 @@ function App() {
 
   return (
     <div className="bg-zinc-950">
-      <Header onNavigate={scrollToSection} refs={{ homeRef, aboutRef, projectsRef, blogRef, contactRef }} />
+      <Header onNavigate={scrollToSection} refs={{ homeRef, aboutRef, projectsRef, experienceRef, blogRef, contactRef }} />
 
       <div ref={homeRef}>
         <Home onGetInTouch={() => scrollToSection(contactRef)} />
       </div>
 
-      <div ref={aboutRef}>
-        <About />
+      <div ref={experienceRef}>
+        <Experience />
       </div>
 
       <div ref={projectsRef}>
         <Projects />
+      </div>
+
+      <div ref={aboutRef}>
+        <About />
       </div>
 
       <div ref={blogRef}>

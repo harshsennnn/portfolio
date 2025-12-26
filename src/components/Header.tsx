@@ -7,6 +7,7 @@ interface HeaderProps {
     homeRef: React.RefObject<HTMLDivElement>;
     aboutRef: React.RefObject<HTMLDivElement>;
     projectsRef: React.RefObject<HTMLDivElement>;
+    experienceRef: React.RefObject<HTMLDivElement>;
     blogRef: React.RefObject<HTMLDivElement>;
     contactRef: React.RefObject<HTMLDivElement>;
   };
@@ -16,9 +17,12 @@ export default function Header({ onNavigate, refs }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'About', ref: refs.aboutRef },
+    { label: 'Work', ref: refs.experienceRef },
     { label: 'Projects', ref: refs.projectsRef },
+    { label: 'Experience', ref: refs.experienceRef },
     { label: 'Blog', ref: refs.blogRef },
+    { label: 'About', ref: refs.aboutRef },
+
   ];
 
   const toggleMenu = () => {

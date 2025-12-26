@@ -1,90 +1,115 @@
-import { Wrench, ShoppingCart, Lock, Rocket, ExternalLink, Star } from 'lucide-react';
+import React from 'react';
+import { Globe, Github, ArrowUpRight } from 'lucide-react';
 
 export default function Projects() {
   const projects = [
-
     {
-      icon: Wrench,
-      title: 'Kubebuilder Automated Update Action',
-      badge: 'Open-Source',
-      description:
-        'A GitHub Action to automate scaffold updates using 3-way merges, preserving custom operator logic.',
-      highlights: 'GitHub Actions, Kubebuilder, YAML patching, CI automation',
-      link: '#',
+      title: 'Homelab K8s Cluster',
+      description: 'Multi-node K3s homelab on Raspberry Pi. Managed CNI, cluster security, and monitoring with Prometheus/Grafana.',
+      image: '/projects/k8s.png',
+      technologies: ['Kubernetes', 'Docker', 'Prometheus', 'Grafana'],
+      status: 'All Systems Operational',
+      statusColor: 'text-emerald-500',
+      dotColor: 'bg-emerald-500',
+      links: { demo: '#', github: '#' }
     },
     {
-      icon: ShoppingCart,
-      title: 'ONDC Shopify Adapter',
-      description:
-        'ONDC-compliant adapter enabling seller platform integration with automated catalog sync and order management.',
-      highlights: 'Fastify, Docker, Shopify API, Microservices',
-      link: '#',
+      title: 'Observability Platform',
+      description: 'Production-grade stack using OpenTelemetry and ELK. Designed incident response workflows and runbooks.',
+      image: '/projects/observability.png',
+      technologies: ['OpenTelemetry', 'Elasticsearch', 'Kibana', 'Prometheus'],
+      status: 'Building',
+      statusColor: 'text-red-500', // Fixed to match operational status
+      dotColor: 'bg-red-500',
+      links: { demo: '#', github: '#' }
     },
     {
-      icon: Lock,
-      title: 'AWS Cognito LocalStack Auth System',
-      description:
-        'Local AWS Cognito with Docker Compose + Fastify to support email-password auth and OAuth (coming soon).',
-      highlights: 'Cognito, LocalStack, Docker Compose, JWT',
-      link: '#',
-    },
-    {
-      icon: Rocket,
-      title: 'CI/CD Auto-Deploy Pipeline',
-      description:
-        'A fully automated pipeline deploying staging environments on push to develop.',
-      highlights: 'Docker, Jenkins/GitHub Actions, Kubernetes, Helm',
-      link: '#',
-    },
+      title: 'DevOps Cert Gen',
+      description: 'Cloud-native microservices with React and Go. Orchestrated with AWS EKS and Terraform (IaC).',
+      image: '/projects/cert-gen.png',
+      technologies: ['Go', 'React', 'AWS EKS', 'Terraform'],
+      status: 'All System Operational',
+      statusColor: 'text-emerald-500',
+      dotColor: 'bg-emerald-500',
+      links: { demo: '#' }
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white px-6 py-20">
+    <div id="projects" className="bg-[#0a0a0a] text-zinc-100 px-6 py-24 font-sans">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-6">Projects</h1>
-        <p className="text-gray-400 text-lg mb-16">
-          Building infrastructure and automation tools for modern cloud-native environments.
-        </p>
+        <header className="mb-12">
+          {/* Consistency: Large Italic Heading matching Experience.tsx */}
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-16 text-white">
+            Projects
+          </h1>
+        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project) => {
-            const Icon = project.icon;
-            return (
-              <div
-                key={project.title}
-                className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 sm:p-8 hover:border-cyan-400/50 transition-all group"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="text-cyan-400">
-                      <Icon size={28} />
-                    </div>
-                    <h3 className="text-xl font-semibold">{project.title}</h3>
-                  </div>
-                  <a
-                    href={project.link}
-                    className="text-gray-500 hover:text-cyan-400 transition-colors"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
-                </div>
-
-                {project.badge && (
-                  <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
-                    <Star size={16} />
-                    <span>{project.badge}</span>
-                  </div>
-                )}
-
-                <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
-
-                <div>
-                  <p className="text-gray-500 text-sm mb-2">HIGHLIGHTS:</p>
-                  <p className="text-gray-400 text-sm">{project.highlights}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects.map((project, index) => (
+            <div 
+              key={index} 
+              className="bg-[#111111] border border-zinc-900 rounded-xl overflow-hidden hover:border-zinc-700 transition-all group flex flex-col"
+            >
+              {/* Image Area */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-purple-900/40 to-pink-900/40 p-3">
+                <div className="w-full h-full bg-zinc-900 rounded-md border border-white/5 overflow-hidden shadow-lg">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
+                  />
                 </div>
               </div>
-            );
-          })}
+
+              {/* Content Section */}
+              <div className="p-4 flex flex-col flex-grow">
+                <div className="flex justify-between items-center mb-2">
+                  <h3 className="text-lg font-semibold text-white tracking-tight">{project.title}</h3>
+                  <div className="flex gap-2 text-zinc-500">
+                    <Globe size={16} className="hover:text-white cursor-pointer transition-colors" />
+                    <Github size={16} className="hover:text-white cursor-pointer transition-colors" />
+                  </div>
+                </div>
+
+                <p className="text-zinc-400 text-xs leading-relaxed mb-4 line-clamp-3 flex-grow">
+                  {project.description}
+                </p>
+
+                {/* Tech Section */}
+                <div className="mb-5">
+                  <p className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider mb-2">Technologies</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.technologies.map((tech, i) => (
+                      <div key={i} className="w-6 h-6 bg-zinc-900 rounded border border-zinc-800 flex items-center justify-center p-1" title={tech}>
+                        <div className="w-full h-full bg-zinc-700 rounded-[1px] opacity-40" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Status and Action Section */}
+                <div className="flex items-center justify-between pt-3 border-t border-zinc-900">
+                  <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-zinc-900 border border-zinc-800 ${project.statusColor} text-[9px] font-medium`}>
+                    <span className={`w-1 h-1 rounded-full ${project.dotColor} animate-pulse`} />
+                    {project.status}
+                  </div>
+                  
+                  <button className="flex items-center gap-1 text-zinc-500 text-[11px] font-bold hover:text-white transition-colors group/btn">
+                    View Details
+                    <ArrowUpRight size={12} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Consistency: Centered Action Button */}
+        <div className="mt-16 flex justify-center">
+          {/* <button className="px-5 py-2.5 bg-[#111111] border border-zinc-800 rounded-lg text-[11px] font-bold text-zinc-300 hover:bg-zinc-800 hover:text-white transition-all uppercase tracking-widest">
+            Show all projects
+          </button> */}
         </div>
       </div>
     </div>

@@ -65,7 +65,7 @@ export default function Home({ onGetInTouch }: HomeProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white px-6 pt-32 pb-20 flex flex-col">
+    <div className="bg-zinc-950 text-white px-6 pt-32 pb-0 flex flex-col">
       <div className="max-w-6xl mx-auto flex-1 flex flex-col justify-center">
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-8">
           Hello, I'm Harsh
