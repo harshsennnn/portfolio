@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Globe, Twitter, Github, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
+import { Globe, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function Experience() {
   const experiences = [
     {
-      company: 'Confidential Startup',
-      role: 'Founding Frontend Engineer',
-      date: 'August 2025 - Present',
-      location: 'United States (Remote)',
+      company: 'Self-Employed',
+      role: 'DevOps Engineer',
+      date: 'Oct 2025 - Present',
+      // location: 'United States (Remote)',
       isWorking: true,
       technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'React', 'Figma', 'Vercel', 'AWS', 'Postman', 'Bun'],
       description: [
@@ -18,10 +18,10 @@ export default function Experience() {
       ],
     },
     {
-      company: 'Upsurge Labs',
-      role: 'Backend Developer Intern',
-      date: 'June 2025 - July 2025',
-      location: 'Bangalore, India (On-Site)',
+      company: 'Softinator TechLabs',
+      role: 'DevOps Intern',
+      date: 'April 2025 - Spet 2025',
+      location: 'Indore (On-Site)',
       technologies: ['NestJS', 'Postman', 'TypeScript', 'Express'], //
       description: [
         'Backend development for Bhindi.io, a flagship product of Upsurge Labs, focusing on core infrastructure and agent development.', //
@@ -31,21 +31,21 @@ export default function Experience() {
       ],
     },
     {
-      company: 'Prepeasy',
-      role: 'Founding Engineer',
-      date: 'April 2025 - June 2025',
+      company: 'Code For GovTech',
+      role: 'DevRel Intern',
+      date: 'Oct 2024 - May 2025',
       location: 'Remote (India)',
       technologies: ['React', 'Node.js', 'MongoDB'],
       description: ['Developing core features for the ed-tech platform.', 'Managing database architecture and API integrations.'],
     },
-    {
-      company: 'Expelee',
-      role: 'SDE-1 (Full Stack) Intern',
-      date: 'Aug 2023 - April 2025',
-      location: 'Dubai, UAE (Remote)',
-      technologies: ['Next.js', 'PostgreSQL', 'Prisma'],
-      description: ['Contributed to full-stack web applications.', 'Collaborated on UI components and backend logic.'],
-    }
+    // {
+    //   company: 'Expelee',
+    //   role: 'SDE-1 (Full Stack) Intern',
+    //   date: 'Aug 2023 - April 2025',
+    //   location: 'Dubai, UAE (Remote)',
+    //   technologies: ['Next.js', 'PostgreSQL', 'Prisma'],
+    //   description: ['Contributed to full-stack web applications.', 'Collaborated on UI components and backend logic.'],
+    // }
   ];
 
   // Initialize with index 0 to expand the latest experience by default
@@ -57,7 +57,7 @@ export default function Experience() {
   };
 
   return (
-    <div id="experience" className="bg-[#0a0a0a] text-zinc-100 px-6 py-24 font-sans">
+    <div id="experience" className="bg-[#0a0a0a] text-zinc-100 px-6 py-8 font-sans">
       <div className="max-w-4xl mx-auto">
         <header className="mb-12">
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-16 text-white">

@@ -1,14 +1,4 @@
-import {
-  Container,
-  Layers,
-  Cloud,
-  GitBranch,
-  Activity,
-  Zap,
-  Code2,
-  Database,
-  Infinity,
-} from 'lucide-react';
+import { Repeat } from 'lucide-react';
 
 import { SiKubernetes,
          SiGrafana,
@@ -37,7 +27,7 @@ export default function Home({ onGetInTouch }: HomeProps) {
   const expertise = [
     'DevOps Engineering',
     // 'MLOps Engineering',
-    'Cloud-Native',
+    'FreeLancer',
     // 'CI/CD Pipelines',
     'Open-Source Contributor',
   ];
@@ -46,7 +36,7 @@ export default function Home({ onGetInTouch }: HomeProps) {
     { name: 'Docker', icon: GrDocker },
     { name: 'Kubernetes', icon: SiKubernetes },
     { name: 'AWS', icon: FaAws },
-    { name: 'CI/CD', icon: Infinity },
+    { name: 'CI/CD', icon: Repeat },
     { name: 'GitHub Actions', icon: SiGithubactions },
     { name: 'Helm', icon: SiHelm },
     { name: 'Terraform', icon: SiTerraform },
@@ -65,7 +55,7 @@ export default function Home({ onGetInTouch }: HomeProps) {
   ];
 
   return (
-    <div className="bg-zinc-950 text-white px-6 pt-32 pb-0 flex flex-col">
+    <div className="bg-zinc-950 text-white px-6 pt-32 pb-12 flex flex-col">
       <div className="max-w-6xl mx-auto flex-1 flex flex-col justify-center">
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-8">
           Hello, I'm Harsh

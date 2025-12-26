@@ -1,4 +1,3 @@
-import React from 'react';
 import { Globe, Github, ArrowUpRight } from 'lucide-react';
 
 export default function Projects() {
@@ -36,7 +35,7 @@ export default function Projects() {
   ];
 
   return (
-    <div id="projects" className="bg-[#0a0a0a] text-zinc-100 px-6 py-24 font-sans">
+    <div id="projects" className="bg-[#0a0a0a] text-zinc-100 px-6 py-6 font-sans">
       <div className="max-w-6xl mx-auto">
         <header className="mb-12">
           {/* Consistency: Large Italic Heading matching Experience.tsx */}

@@ -25,7 +25,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white px-6 py-20 flex flex-col">
+    <div className="min-h-screen bg-zinc-950 text-white px-6 py-1 flex flex-col">
       <div className="max-w-5xl mx-auto flex-1 flex flex-col">
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-6">Get in Touch</h1>
         <p className="text-gray-400 text-lg mb-16">

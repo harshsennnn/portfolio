@@ -4,33 +4,33 @@ export default function Blog() {
   const posts = [
 
     {
-      title: 'How to Set Up Kubernetes Node Selector & Cordon with Minikube',
-      date: 'Dec 2024',
-      readTime: '8 min read',
-      link: '#',
-    },
-    {
-      title: 'Building a CI/CD Pipeline with Jenkins + EKS + Helm',
-      date: 'Nov 2024',
-      readTime: '12 min read',
-      link: '#',
-    },
-    {
-      title: 'Simulating AWS Cognito Locally Using Docker & LocalStack',
-      date: 'Oct 2024',
-      readTime: '6 min read',
-      link: '#',
-    },
-    {
-      title: 'Why Every Team Should Adopt GitOps Early',
-      date: 'Sep 2024',
+      title: 'How to Secure and Optimize Docker: Best Practices',
+      date: 'Aug 2025',
       readTime: '5 min read',
       link: '#',
     },
-  ];
+    {
+      title: 'Essential Tips for Beginners in DevOps and Cloud Engineering',
+      date: 'Jun 2025',
+      readTime: '3 min read',
+      link: '#',
+    },
+    ];
+    // {
+    //   title: 'Simulating AWS Cognito Locally Using Docker & LocalStack',
+    //   date: 'Oct 2024',
+    //   readTime: '6 min read',
+    //   link: '#',
+    // },
+    // {
+    //   title: 'Why Every Team Should Adopt GitOps Early',
+    //   date: 'Sep 2024',
+    //   readTime: '5 min read',
+    //   link: '#',
+    // },
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white px-6 py-20">
+    <div className="min-h-screen bg-zinc-950 text-white px-6 py-10">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-6">Blog</h1>
         <p className="text-gray-400 text-lg mb-16">
