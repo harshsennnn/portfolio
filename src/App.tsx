@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
+import { Meteors } from './components/Meteors';
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -20,31 +21,45 @@ function App() {
   };
 
   return (
-    <div className="bg-zinc-950">
-      <Header onNavigate={scrollToSection} refs={{ homeRef, aboutRef, projectsRef, experienceRef, blogRef, contactRef }} />
-
-      <div ref={homeRef}>
-        <Home onGetInTouch={() => scrollToSection(contactRef)} />
+    <div className="bg-zinc-950 min-h-screen relative overflow-x-hidden selection:bg-cyan-500/30">
+      
+{/* Meteor Effect Layer */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Meteors number={30} />
       </div>
 
-      <div ref={experienceRef}>
-        <Experience />
-      </div>
+      {/* CONTENT LAYER */}
+      <div className="relative z-10">
+        <Header 
+          onNavigate={scrollToSection} 
+          refs={{ homeRef, aboutRef, projectsRef, experienceRef, blogRef, contactRef }} 
+        />
 
-      <div ref={projectsRef}>
-        <Projects />
-      </div>
+        <main>
+          <section ref={homeRef}>
+            <Home onGetInTouch={() => scrollToSection(contactRef)} />
+          </section>
 
-      <div ref={aboutRef}>
-        <About />
-      </div>
+          <section ref={experienceRef}>
+            <Experience />
+          </section>
 
-      <div ref={blogRef}>
-        <Blog />
-      </div>
+          <section ref={projectsRef}>
+            <Projects />
+          </section>
 
-      <div ref={contactRef}>
-        <Contact />
+          <section ref={aboutRef}>
+            <About />
+          </section>
+
+          <section ref={blogRef}>
+            <Blog />
+          </section>
+
+          <section ref={contactRef}>
+            <Contact />
+          </section>
+        </main>
       </div>
     </div>
   );
