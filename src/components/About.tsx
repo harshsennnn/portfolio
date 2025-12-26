@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="bg-zinc-950 text-white px-6 py-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-16">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-8 sm:mb-16">
           About Me
         </h1>
 
@@ -26,7 +26,7 @@ export default function About() {
         </div>
 
         {/* GitHub Activity integrated here */}
-        <div className="mt-24 border-t border-zinc-900 pt-16">
+        <div className="mt-16 sm:mt-24 border-t border-zinc-900 pt-8 sm:pt-16">
           <GithubActivity />
         </div>
       </div>

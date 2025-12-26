@@ -1,22 +1,21 @@
-import { Repeat } from 'lucide-react';
-
-import { SiKubernetes,
-         SiGrafana,
-         SiPrometheus,
-         SiGithubactions,
-         SiHelm,
-         SiTerraform,
-         SiArchlinux,
-         SiRaspberrypi,
-         SiJavascript,
-         SiPostgresql,
-         SiArgo,
-         SiOpentelemetry,
-         SiNginx,
- } from 'react-icons/si';
+import {
+  SiKubernetes,
+  SiGrafana,
+  SiPrometheus,
+  SiGithubactions,
+  SiHelm,
+  SiTerraform,
+  SiArchlinux,
+  SiRaspberrypi,
+  SiJavascript,
+  SiPostgresql,
+  SiArgo,
+  SiOpentelemetry,
+  SiNginx,
+} from 'react-icons/si';
 
  import { GrDocker, GrMysql } from "react-icons/gr";
- import { FaAws, FaReact } from "react-icons/fa";
+ import { FaAws, FaReact, FaInfinity } from "react-icons/fa";
 import { FaGolang } from "react-icons/fa6";
 
 interface HomeProps {
@@ -36,7 +35,7 @@ export default function Home({ onGetInTouch }: HomeProps) {
     { name: 'Docker', icon: GrDocker },
     { name: 'Kubernetes', icon: SiKubernetes },
     { name: 'AWS', icon: FaAws },
-    { name: 'CI/CD', icon: Repeat },
+    { name: 'CI/CD', icon: FaInfinity },
     { name: 'GitHub Actions', icon: SiGithubactions },
     { name: 'Helm', icon: SiHelm },
     { name: 'Terraform', icon: SiTerraform },
@@ -58,15 +57,15 @@ export default function Home({ onGetInTouch }: HomeProps) {
     <div className="bg-zinc-950 text-white px-6 pt-32 pb-12 flex flex-col">
       <div className="max-w-6xl mx-auto flex-1 flex flex-col justify-center">
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-8">
-          Hello, I'm Harsh
+          Hello, I'm HARSH
           <span className="text-cyan-400">_</span>
         </h1>
 
-        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-12 text-gray-400 italic text-lg">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-x-4 gap-y-2 mb-12 text-gray-400 italic text-lg">
           {expertise.map((item, index) => (
             <span key={item}>
               {item}
-              {index < expertise.length - 1 && <span className="mx-2">|</span>}
+              {index < expertise.length - 1 && <span className="hidden sm:inline mx-2">|</span>}
             </span>
           ))}
         </div>

@@ -5,27 +5,27 @@ export default function Contact() {
     {
       icon: Github,
       label: 'GitHub',
-      link: 'https://github.com',
+      link: 'https://github.com/harshsennnn',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      link: 'https://linkedin.com',
+      link: 'https://linkedin.com/in/harshsen/',
     },
     {
       icon: FileText,
       label: 'Resume',
-      link: '#',
+      link: 'https://drive.google.com/file/d/1TEWmCrNSmcKdohswKY1Jue1W7C9iYeq9/view?usp=sharing',
     },
     {
       icon: Mail,
       label: 'Email',
-      link: 'mailto:harsh@example.com',
+      link: 'mailto:harshsennn@gmail.com',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white px-6 py-1 flex flex-col">
+    <div className="bg-zinc-950 text-white px-6 py-1 flex flex-col">
       <div className="max-w-5xl mx-auto flex-1 flex flex-col">
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-6">Get in Touch</h1>
         <p className="text-gray-400 text-lg mb-16">

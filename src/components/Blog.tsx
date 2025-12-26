@@ -30,10 +30,10 @@ export default function Blog() {
     // },
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white px-6 py-10">
+    <div className="bg-zinc-950 text-white px-6 py-20">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-6">Blog</h1>
-        <p className="text-gray-400 text-lg mb-16">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-4 sm:mb-6">Blog</h1>
+        <p className="text-gray-400 text-lg mb-8 sm:mb-16">
           Thoughts on DevOps, cloud infrastructure, and engineering best practices.
         </p>
 
@@ -42,7 +42,7 @@ export default function Blog() {
             <a
               key={post.title}
               href={post.link}
-              className="block border-t border-zinc-800 py-8 hover:bg-zinc-900/30 transition-all group px-4 -mx-4 rounded-lg"
+              className="block border-t border-zinc-800 py-6 sm:py-8 hover:bg-zinc-900/30 transition-all group px-4 -mx-4 rounded-lg"
             >
               <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
                 <div className="flex-1">

@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import { Globe, Github, ChevronDown, ChevronUp } from 'lucide-react';
+import { Globe, ChevronDown, ChevronUp } from 'lucide-react';
+
+import logo1 from '/src/components/Assets/logo1.png';
+import logo2 from '/src/components/Assets/logo2.png';
+import logo3 from '/src/components/Assets/logo3.png';
 
 export default function Experience() {
   const experiences = [
@@ -7,52 +11,46 @@ export default function Experience() {
       company: 'Self-Employed',
       role: 'DevOps Engineer',
       date: 'Oct 2025 - Present',
-      // location: 'United States (Remote)',
+      logo: logo1,
       isWorking: true,
-      technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'React', 'Figma', 'Vercel', 'AWS', 'Postman', 'Bun'],
+      technologies: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'GitHub Actions', 'ArgoCD', 'Prometheus', 'Grafana', 'Nginx Ingress'],
       description: [
-        'Architected and developed the complete frontend infrastructure for the platform, a comprehensive solution for creating and managing promotional campaigns.',
-        'Led a comprehensive codebase refactoring initiative that improved maintainability, scalability, and development velocity across the entire platform.',
-        'Integrated and optimized backend API connections, implementing efficient data fetching strategies and error handling mechanisms.',
-        'Enhanced user experience and interface design through implementation of consistent design systems, accessibility standards, and performance optimizations.',
+        'Architected and automated production-grade cloud infrastructure on AWS (EC2, EKS, RDS, S3, IAM, VPC) using Terraform, Docker, and Kubernetes, enabling scalable and secure workloads.',
+        'Engineered multi-node Kubernetes clusters using kubeadm, configuring control plane, worker nodes, CNI networking, ingress, and cluster hardening for microservices environments.',
+        'Built CI/CD and GitOps pipelines with GitHub Actions and ArgoCD, enabling automated build, test, deploy workflows and zero-downtime Kubernetes rollouts.',
+        'Implemented monitoring and reliability practices using Prometheus and Grafana performed staging/production troubleshooting (pods, networking, CI failures), improving system stability and delivery speed.',
       ],
     },
     {
       company: 'Softinator TechLabs',
       role: 'DevOps Intern',
-      date: 'April 2025 - Spet 2025',
+      date: 'April 2025 - Sept 2025',
+      logo: logo2,
       location: 'Indore (On-Site)',
-      technologies: ['NestJS', 'Postman', 'TypeScript', 'Express'], //
+      technologies: ['AWS', 'Terraform', 'GitHub Actions', 'Kubernetes (EKS)'],
       description: [
-        'Backend development for Bhindi.io, a flagship product of Upsurge Labs, focusing on core infrastructure and agent development.', //
-        'Engineered and deployed multiple high-performance agents, enhancing product capabilities and user experience.', //
-        'Testing agent functionality, authentication, automation, and system stability.', //
-        'Streamlined development workflows by optimizing internal tools and maintaining detailed technical documentation.', //
+        'Provisioned scalable AWS infrastructure (EC2, S3, RDS, EKS) using Terraform, establishing a highly consistent Infrastructure-as-Code foundation and ensuring repeatable, fault-tolerant deployments across environments.',
+        'Designed end-to-end CI/CD pipelines with GitHub Actions, reducing deployment time by ~55% and improving release reliability.',
+        'Configured secure multi-cluster AWS architectures for a fintech platform, ensuring high availability, scalability, and compliance readiness.',
       ],
     },
     {
       company: 'Code For GovTech',
       role: 'DevRel Intern',
       date: 'Oct 2024 - May 2025',
+      logo: logo3,
       location: 'Remote (India)',
-      technologies: ['React', 'Node.js', 'MongoDB'],
-      description: ['Developing core features for the ed-tech platform.', 'Managing database architecture and API integrations.'],
+      technologies: ['Digital Public Infrastructure', 'Digital Public Goods', 'Discord-community'],
+      description: [
+        'Led DevRel initiatives for national Digital Public Infrastructure programs authored technical blogs/videos reaching 5K+ developers.',
+        'Scaled Augtoberfest community 0 - 5,000+ members in 7 days, hosting live Q&A sessions and supporting open-source contributors.'
+      ],
     },
-    // {
-    //   company: 'Expelee',
-    //   role: 'SDE-1 (Full Stack) Intern',
-    //   date: 'Aug 2023 - April 2025',
-    //   location: 'Dubai, UAE (Remote)',
-    //   technologies: ['Next.js', 'PostgreSQL', 'Prisma'],
-    //   description: ['Contributed to full-stack web applications.', 'Collaborated on UI components and backend logic.'],
-    // }
   ];
 
-  // Initialize with index 0 to expand the latest experience by default
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
   const toggleExpand = (index: number) => {
-    // If clicking the already open one, close it; otherwise open the new one
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
@@ -71,14 +69,21 @@ export default function Experience() {
             
             return (
               <div key={index} className="border-b border-zinc-900 pb-6 last:border-0">
-                {/* Clickable Header Area */}
                 <div 
                   className="flex justify-between items-start cursor-pointer group"
                   onClick={() => toggleExpand(index)}
                 >
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center border border-zinc-800 shrink-0">
-                      <span className="text-[10px] text-zinc-500">LOGO</span>
+                    {/* FIXED LOGO CONTAINER */}
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center border border-zinc-800 shrink-0 overflow-hidden">
+                      <img 
+                        src={exp.logo} 
+                        alt={`${exp.company} logo`} 
+                        className="w-full h-full object-contain" 
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
                     </div>
                     
                     <div>
@@ -88,7 +93,6 @@ export default function Experience() {
                         </h3>
                         <div className="flex gap-1.5 text-zinc-500">
                           <Globe size={14} className="hover:text-white" />
-                          <Github size={14} className="hover:text-white" />
                         </div>
                         {exp.isWorking && (
                           <span className="ml-2 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 text-[10px] font-medium flex items-center gap-1 border border-emerald-500/20">
@@ -96,7 +100,6 @@ export default function Experience() {
                             Working
                           </span>
                         )}
-                        {/* Toggle Indicator Icon */}
                         <div className="text-zinc-600 ml-2">
                            {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                         </div>
@@ -111,7 +114,6 @@ export default function Experience() {
                   </div>
                 </div>
 
-                {/* Collapsible Content */}
                 {isExpanded && (
                   <div className="mt-6 pl-16 transition-all duration-300 ease-in-out">
                     {exp.technologies && (
