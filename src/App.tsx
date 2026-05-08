@@ -20,45 +20,29 @@ function App() {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const refs = { homeRef, aboutRef, projectsRef, experienceRef, blogRef, contactRef };
+
   return (
     <div className="bg-zinc-950 min-h-screen relative overflow-x-hidden selection:bg-cyan-500/30">
       
-{/* Meteor Effect Layer */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Background layer for meteors */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <Meteors number={30} />
       </div>
 
-      {/* CONTENT LAYER */}
+      {/* Main content layer */}
       <div className="relative z-10">
-        <Header 
-          onNavigate={scrollToSection} 
-          refs={{ homeRef, aboutRef, projectsRef, experienceRef, blogRef, contactRef }} 
-        />
+        <Header onNavigate={scrollToSection} refs={refs} />
 
         <main>
           <section ref={homeRef}>
             <Home onGetInTouch={() => scrollToSection(contactRef)} />
           </section>
-
-          <section ref={experienceRef}>
-            <Experience />
-          </section>
-
-          <section ref={projectsRef}>
-            <Projects />
-          </section>
-
-          <section ref={aboutRef}>
-            <About />
-          </section>
-
-          <section ref={blogRef}>
-            <Blog />
-          </section>
-
-          <section ref={contactRef}>
-            <Contact />
-          </section>
+          <section ref={experienceRef}><Experience /></section>
+          <section ref={projectsRef}><Projects /></section>
+          <section ref={aboutRef}><About /></section>
+          <section ref={blogRef}><Blog /></section>
+          <section ref={contactRef}><Contact /></section>
         </main>
       </div>
     </div>

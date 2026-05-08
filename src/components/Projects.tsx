@@ -1,11 +1,12 @@
 import { Github } from 'lucide-react';
+import { CICD, homelab, observability } from './Assets';
 
 export default function Projects() {
   const projects = [
     {
       title: 'Kubernetes Homelab',
       description: 'Self-hosted, multi-node Kubernetes homelab using Raspberry Pies with production-style networking, CI/CD deployments, monitoring, and hands-on SRE troubleshooting.',
-      image: '/src/components/Assets/homelab.png',
+      image: homelab,
       technologies: ['Kubernetes', 'Docker', 'Prometheus', 'Grafana'],
       status: 'All Systems Operational',
       statusColor: 'text-emerald-500',
@@ -15,7 +16,7 @@ export default function Projects() {
     {
       title: 'Observability Platform',
       description: 'Designed a full observability stack using OpenTelemetry, Prometheus, Grafana, and ELK to monitor, debug, and respond to production-like incidents.',
-      image: '/src/components/Assets/observability.png',
+      image: observability,
       technologies: ['OpenTelemetry', 'Elasticsearch', 'Kibana', 'Prometheus'],
       status: 'Building',
       statusColor: 'text-red-500', // Fixed to match operational status
@@ -25,7 +26,7 @@ export default function Projects() {
     {
       title: 'DevOps Cert Gen',
       description: 'Cloud-native microservices platform with automated CI/CD, Kubernetes deployments, and scalable storage for certificate generation.',
-      image: '/src/components/Assets/CICD.png',
+      image: CICD,
       technologies: ['Go', 'React', 'AWS EKS', 'Terraform'],
       status: 'All System Operational',
       statusColor: 'text-emerald-500',

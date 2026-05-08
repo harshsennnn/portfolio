@@ -13,7 +13,7 @@ export default function Experience() {
       date: 'Oct 2025 - Present',
       logo: logo1,
       isWorking: true,
-      link: '', // Placeholder link
+      link: '', 
       technologies: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'GitHub Actions', 'ArgoCD', 'Prometheus', 'Grafana', 'Nginx Ingress'],
       description: [
         'Architected and automated production-grade cloud infrastructure on AWS (EC2, EKS, RDS, S3, IAM, VPC) using Terraform, Docker, and Kubernetes, enabling scalable and secure workloads.',
@@ -28,7 +28,7 @@ export default function Experience() {
       date: 'April 2025 - Sept 2025',
       logo: logo2,
       location: 'Indore (On-Site)',
-      link: 'https://softinator.com/', // Placeholder link
+      link: 'https://softinator.com/', 
       technologies: ['AWS', 'Terraform', 'GitHub Actions', 'Kubernetes (EKS)'],
       description: [
         'Provisioned scalable AWS infrastructure (EC2, S3, RDS, EKS) using Terraform, establishing a highly consistent Infrastructure-as-Code foundation and ensuring repeatable, fault-tolerant deployments across environments.',
@@ -42,7 +42,7 @@ export default function Experience() {
       date: 'Oct 2024 - May 2025',
       logo: logo3,
       location: 'Remote (India)',
-      link: 'https://codeforgovtech.in/', // Placeholder link
+      link: 'https://codeforgovtech.in/', 
       technologies: ['Digital Public Infrastructure', 'Digital Public Goods', 'Discord-community'],
       description: [
         'Led DevRel initiatives for national Digital Public Infrastructure programs authored technical blogs/videos reaching 5K+ developers.',
@@ -74,13 +74,13 @@ export default function Experience() {
               <div key={index} className="border-b border-zinc-900 pb-6 last:border-0">
                 <div 
                   className="flex justify-between items-start cursor-pointer group"
+                  // e.preventDefault() prevents the browser from jumping the scroll position on click
                   onClick={(e) => {
                     e.preventDefault();
                     toggleExpand(index);
                   }}
                 >
                   <div className="flex gap-4">
-                    {/* FIXED LOGO CONTAINER */}
                     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center border border-zinc-800 shrink-0 overflow-hidden">
                       <img 
                         src={exp.logo} 

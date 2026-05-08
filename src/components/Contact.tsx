@@ -1,31 +1,17 @@
+import { FaXTwitter } from 'react-icons/fa6';
 import { Github, Linkedin, FileText, Mail } from 'lucide-react';
 
 export default function Contact() {
   const contactMethods = [
-    {
-      icon: Github,
-      label: 'GitHub',
-      link: 'https://github.com/harshsennnn',
-    },
-    {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      link: 'https://linkedin.com/in/harshsen/',
-    },
-    {
-      icon: FileText,
-      label: 'Resume',
-      link: 'https://drive.google.com/file/d/1TEWmCrNSmcKdohswKY1Jue1W7C9iYeq9/view?usp=sharing',
-    },
-    {
-      icon: Mail,
-      label: 'Email',
-      link: 'mailto:harshsennn@gmail.com',
-    },
+    { icon: Github, label: 'GitHub', link: 'https://github.com/harshsennnn' },
+    { icon: Linkedin, label: 'LinkedIn', link: 'https://linkedin.com/in/harshsen/' },
+    { icon: FaXTwitter, link: 'https://x.com/yupsharsh' },
+    { icon: FileText, label: 'Resume', link: 'https://drive.google.com/file/d/1...' },
+    { icon: Mail, label: 'Email', link: 'mailto:harshsennn@gmail.com' },
   ];
 
   return (
-    <div className="bg-zinc-950 text-white px-6 py-1 flex flex-col">
+    <div className="bg-zinc-950 text-white px-6 py-20 flex flex-col">
       <div className="max-w-5xl mx-auto flex-1 flex flex-col">
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold italic mb-6">Get in Touch</h1>
         <p className="text-gray-400 text-lg mb-16">
@@ -41,7 +27,7 @@ export default function Contact() {
                 href={method.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex items-center gap-4 hover:border-cyan-400/50 hover:bg-zinc-900/70 transition-all group"
+                className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 sm:p-4 flex items-center gap-4 hover:border-cyan-400/50 hover:bg-zinc-900/70 transition-all group"
               >
                 <Icon size={24} className="text-gray-400 group-hover:text-cyan-400 transition-colors" />
                 <span className="text-lg font-medium">{method.label}</span>
